@@ -4,6 +4,13 @@ class Cupid
       resource :update, ui_data(ui, email)
     end
 
+    def update_user_email(key, email)
+      resource :update, server.object("Subscriber", {
+        :customer_key => key,
+        :email_address => email
+      })
+    end
+
     def update_user_attributes(key, properties)
       resource :update, server.object("Subscriber", {
         :customer_key => key,
