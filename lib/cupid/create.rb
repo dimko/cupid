@@ -48,7 +48,7 @@ class Cupid
       retrieve_first :EmailSendDefinition, name: response.data[:name]
     end
 
-    def create_subscrbier(user_key, email_address, properties)
+    def create_subscriber(user_key, email_address, properties)
       create "Subscriber", {
           :customer_key => user_key,
           :email_address => email_address,
